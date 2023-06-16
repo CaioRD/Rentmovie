@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer login</title>
+    <!--Link do favicon-->
+    <link class="favicon" rel="shortcut icon" href="img/movie-solid-24.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-card-container">
+        <div class="login-card">
+            <div id="logo"> <a href="#" class="logo">
+                <i class='bx bxs-movie' id="movie"></i>RentMovie
+            </a>
+            <div class="login-card-header">
+                <h1>Sign In</h1>
+                <div>Por favor, registre-se para usar a plataforma</div>
+            </div>
+            <form class="login-card-form">
+                <div class="form-item">
+                    <span><i class='bx bx-envelope'></i></span>
+                    <input type="text" placeholder="Digite o Email" id="emailForm" 
+                    autofocus required>
+                </div>
+                <div class="form-item">
+                    <span><i class='bx bx-lock-alt'></i></span>
+                    <input type="password" placeholder="Digite a Senha" id="passwordForm"
+                     required>
+                </div>
+                <div class="form-item-other">
+                    <div class="checkbox">
+                        <input type="checkbox" id="rememberMeCheckbox" checked>
+                        <label for="rememberMeCheckbox"></label><div class="remember">Lembrar de mim</div>
+                    </div>
+                    <a href="#">Esqueci minha Senha!</a>
+                </div>
+                <button type="submit">Entrar<a href="index.html">__________</a></button>
+            </form>
+            <div class="login-card-footer">
+                 <a href="#">Criar uma conta Grátis.</a>
+            </div>
+        </div>
+        <div class="login-card-social">
+            <!--<div>Other Sign-In Options</div>-->
+            <div class="login-card-social-btns">                
+                <a href="#"><i class='bx bxl-facebook'></i></a>                
+                <a href="#"><i class='bx bxl-google' ></i></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

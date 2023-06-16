@@ -1,0 +1,614 @@
+/*Google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+/*variaveis*/
+:root{
+    --main-color: #ff2c1f;
+    --text-color: #020307;
+    --bg-color: #fff; 
+    --back-color:linear-gradient(to bottom, rgb(15,0,50), rgb(15,0,145), rgb(15,0,195));
+}/*customizar barra de scroll*/
+html::-webkit-scrollbar{
+    width: 0.3rem;
+    background: var(--text-color);    
+}
+html::-webkit-scrollbar:hover{
+    cursor: pointer;
+    width: 0.4rem;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+body{
+    background: var(--back-color);
+    background-attachment: fixed;
+    color: var(--bg-color);
+}
+section{
+    padding: 4.5rem 0 1.5rem;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    transition: 0.5s;   
+}
+header.shadow{
+    background: var(--bg-color);
+}
+header.shadow .navBar a{
+    color: var(--text-color) !important;
+}
+header.shadow .logo{
+    color: var(--text-color);
+    box-shadow: 0 0 4px rgb( 14 55 54 / 15%);
+}
+.logo{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+header a .logo #movie{
+    font-size: 24px !important;
+    color: var(--main-color) !important;
+    text-decoration: none !important;
+    
+}
+.logo .bx{
+    font-size: 24px !important;
+    color: var(--main-color) !important;
+    text-decoration: none !important;
+}
+.navBar{
+    display: flex;
+    column-gap: 5rem;
+}
+.navBar li{
+    position: relative;
+}
+.navBar a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--bg-color);
+    text-decoration: none;
+}
+.navBar a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s all linear;
+}
+.navBar a:hover::after, 
+.navBar Active::after{
+    width: 100%;
+}
+#menu-icon{
+    font-size: 24px !important;
+    cursor: pointer !important;
+    z-index: 1000001 !important;
+    display: none !important;
+    
+}
+.btn{
+    padding: 0.7rem 1.4rem !important;
+    background: var(--main-color) !important;
+    color: var(--bg-color) !important;
+    font-weight: 400 !important;
+    border-radius: 0.5rem !important;
+}
+.btn:hover{
+    background: #fa1216;
+}
+.carousel-item img{
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   width: auto;
+   height: 100vh;
+   filter: brightness(80%);
+}
+/*  */
+.heading{
+    max-width: 968px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font: size 1.2rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    border-bottom: 1px solid var(--main-color) !important;
+}
+/*Filmes*/
+.moviesContainer{
+    max-width: 968px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,auto));
+    gap: 1rem;
+    margin-top: 2rem;    
+}
+.movies h2{
+    color: var(--bg-color) !important;
+}
+.box .box-img{
+    width: 100%;
+    height: 270px;
+}
+.box .box-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+.box .box-img img:hover{
+    transform: translateY(-10px);
+    transition: 0.2s all linear;
+}
+.box h3{
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: var(--bg-color) !important;
+}
+.box span{
+    font-size: 13px !important;
+    color: var(--bg-color) !important;
+}
+/*Mais recentes*/
+.recente-container{
+    max-width: 968px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,auto));
+    gap: 1rem;
+    margin-top: 2rem;    
+    display: flex;
+}
+
+
+/*Newsletter*/
+.novidades{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;    
+}
+.novidades h2{
+    text-align: center !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: var(--bg-color) !important;
+
+}
+.novidades form{
+    background: var(--bg-color) !important;
+    padding: 10px !important;
+    border-radius: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;    
+}
+.novidades form input{
+    border: none;
+    outline: none;
+
+}
+.novidades form .email{
+    width: 280px;
+}
+.novidades form input ::placeholder{
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.novidades .btn{
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+.footer{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.social .bx{
+    background: var(--bg-color) !important;
+    padding: 2px !important;
+    font-size: 2rem !important;
+    border-radius: 50% !important;
+    border: 4px solid rgb(2,3,7,0.4) !important;
+    color: var(--main-color) !important;
+}
+.social .bx:hover{
+    background: var(--main-color) !important;
+    color: var(--bg-color) !important;
+    transition: 0.2s all linear !important;
+}
+.copyright{
+    padding: 20px !important;
+    text-align: center !important;
+    color: var(--bg-color) !important;
+}
+@media (max-width: 1080px){
+    .homeText{
+        padding: 0 100px;
+    }
+}
+@media (max-width: 991px){
+    header{
+        padding: 18px 4%;
+    }
+    section{
+        padding: 50px 4%;
+    }
+    .homeText{
+        padding: 0 4%;
+    }
+    .homeText h1{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 774px){
+    header{
+        padding: 12px 4%;
+    }
+    #menu-icon{
+        display: initial;
+        color: var(--bg-color);
+    }
+    header.shadow #menu-icon{
+        color: var(--text-color);
+    }
+    .navBar{
+        position: absolute;
+        top: -570px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        row-gap: 1.4rem;
+        padding: 20px;
+        box-shadow: 4px 4px 0 4px rgb( 14 55 54 / 15%);
+        transition: 0.2s all linear;
+        text-align: center;
+    }
+    .navBar a{
+        width: 100%;
+        color: var(--text-color);
+    }
+    .navBar a:hover{
+        color:var(--main-color);
+        border-bottom: 1px solid var(--main-color);
+    }
+    .navBar a::after{
+        display: none;
+    }
+    .navBar.active{
+        top: 100%;
+    }
+    .homeText h1{
+        font-size: 2.4rem;
+    }
+    .btn{
+        padding: 0.6rem 1.2rem;
+    }
+    .moviesContainer{
+        grid-template-columns: repeat(auto-fit,minmax(160px, auto));
+    }
+}
+@media (max-width: 472px){
+    .novidades form .email{
+        width: auto;
+    }
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+}
+@media (max-width: 370px){
+    header{
+        padding: 6px 4%;
+    }
+    .homeText h1{
+        font-size: 1.7rem;
+    }
+    .play{
+        right: 2rem;
+        bottom: 8%;
+    }
+    .play .bx{
+        padding: 7px;
+    }
+    .moviesContainer{
+        grid-template-columns: repeat(auto-fit,minmax(140px, auto));
+    }
+    .box .box-img{
+        height: 240px;
+    }
+}
+
+
+
+
+
+/*PÁGINA DE LOGIN*/
+
+@import url("reset.css");
+
+
+body {
+    font-family:'poppins' sans-serif;
+    min-height: 100vh;
+    background: var(--back-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Login Card */
+.login-card {
+    width: 450px;
+    background: rgba(255, 255, 255 );
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 2rem;
+}
+
+/* .login-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, .15);
+    transform: rotate(-6deg);
+    border-radius: 10px;
+    z-index: -1; */
+}
+/* ---------- */
+
+/* Login Card Logo */
+.login-card{
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.login-card-logo img {
+    width: 60px;
+}
+/* ---------- */
+
+/* Login Card Standard */
+.login-card,
+.login-card-header,
+.login-card-footer {
+    text-align: center;
+}
+
+.login-card a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.login-card a:hover {
+    text-decoration: underline;
+}
+/* ---------- */
+
+/* Login Card Header */
+.login-card-header {
+    margin-bottom: 2rem;
+}
+
+.login-card-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+.login-card-header h1{
+    color: var(--text-color) !important;
+    margin-top: 1rem;
+}
+
+.login-card-header h1+div {
+    font-size: calc(1rem * .8);
+    /* opacity: .8; */
+    color: var(--text-color);
+}
+/* ---------- */
+
+/* Login Card Form */
+.login-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-card-form .form-item {
+    position: relative;
+}
+
+.login-card-form .form-item .form-item-icon {
+    position: absolute;
+    top: .82rem;
+    left: 1.4rem;
+    font-size: 1.3rem;
+    opacity: .4;
+}
+
+.login-card-form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.login-card-form .form-item-other {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(1rem * .8);
+    margin-bottom: .5rem;
+}
+/* ---------- */
+
+/* Login Card Footer */
+.login-card-footer {
+    margin-top: 1.5rem;
+    font-size: calc(1rem * .8);
+}
+/* ---------- */
+
+/* Login Card Form Elements */
+.login-card input[type="text"],
+.login-card input[type="password"],
+.login-card input[type="email"] {
+    border: 1px solid var(--text-color);
+    outline: none;
+    background: rgba(255, 255, 255, .3);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 3.5);
+    border-radius: 100px;
+    width: 100%;
+    transition: background .5s;
+}
+
+.login-card input:focus {
+    background: white;
+}
+
+.login-card input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: black;
+    color: var(--text-color);
+    cursor: pointer;
+}
+div .remember{
+    color:var(--text-color);
+    margin-left: -4px;
+    
+}
+button a{
+    color: var(--bg-color);
+}
+
+
+.login-card button {
+    background: var(--main-color);
+    color: white !important;
+    padding: 1rem;
+    border-radius: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+}
+button[type="submit"] a{
+    color: var(--bg-color) !important;
+    margin-left: -4.2rem;
+    padding-top: 1px;
+    letter-spacing: -3px;
+    text-decoration: none;
+}
+   
+
+.login-card button:hover {
+    background-color: #fa1216;
+    cursor: pointer;
+    
+}
+/* ---------- */
+
+/* Login Card Social Buttons */
+.login-card-social {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.login-card-socialdiv {
+    opacity: .8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: calc(1rem * .8);
+}
+
+.login-card-social-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.login-card-social-btns a {
+    text-decoration: none;
+    display: flex;
+    background: var(--bg-color) !important;
+    padding: 2px !important;
+    font-size: 2rem !important;
+    border-radius: 50% !important;
+    border: 4px solid rgb(2,3,7,0.4) !important;
+    color: var(--main-color) !important;
+}
+
+.login-card-social-btns a:hover {
+    text-decoration: none;
+    background: var(--main-color) !important;
+    color: var(--bg-color) !important;
+    transition: 0.2s all linear !important;
+}
+}
+/* ---------- */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    body {
+        padding: 2rem 0;
+    }
+
+    .login-card {
+        width: 280px;
+        padding: 2rem;
+    }
+
+}
+/* ---------- */
